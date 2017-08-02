@@ -2,7 +2,7 @@
 <% include ../partials/header %>
 
 <div class="editpage">
-<form method='POST' action='/todo/<%= data.id%>?_method=PUT'>
+<form method='POST' action='/nutri/<%= data.id%>?_method=PUT'>
   <input name='title' type='text' value='<%= data.title %>' />
     <input name='category' type='text' value='<%= data.category %>' />
       <input name='details' type='text'  value='<%= data.details %>' />

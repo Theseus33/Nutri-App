@@ -4,14 +4,14 @@ const Nutri = {};
 
 Nutri.findAll = (id) => {
   return db.query(`
-    SELECT * FROM nutris
+    SELECT * FROM nutri
     WHERE user_id = $1
   `, [id]);
 };
 
 Nutri.create = (nutri) => {
   return db.one(`
-    INSERT INTO nutris
+    INSERT INTO nutri
     (title, description, category, completed, user_id)
     VALUES ($1, $2, $3, $4, $5, $6, $7)
     RETURNING *
@@ -20,14 +20,14 @@ Nutri.create = (nutri) => {
 
 Nutri.findById = (id) => {
   return db.oneOrNone(`
-  SELECT * FROM nutris
+  SELECT * FROM nutri
   WHERE id = $1
   `, [id]);
 };
 
 Nutri.update = (nutri, id) => {
   return db.one(`
-    UPDATE nutris SET
+    UPDATE nutri SET
     food = $1,
     brand= $2,
     calories = $3,
@@ -41,14 +41,14 @@ Nutri.update = (nutri, id) => {
 
 Nutri.destroy = (id) => {
   return db.none(`
-    DELETE FROM nutris
+    DELETE FROM nutri
     WHERE id = $1
   `, [id])
 }
 
 Nutri.complete = (id) => {
   return db.oneOrNone(`
-  UPDATE nutris SET
+  UPDATE nutri SET
   completed = true
   WHERE id = $1
   `, [id]);
