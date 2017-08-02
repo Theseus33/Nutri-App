@@ -1,16 +1,16 @@
 //imports Nutri path
-const Nutri = require('../models/nutri-model')
+const Nutri = require('../models/nutri-model');
 //Nutri controller as empty object
-const nutriController={}
+const nutriController={};
 //catch will come into effect if then condition is not met and
 //the proper error will be listed in console for the following requests
 
 //render list of all Nutris from json data
 nutriController.index = (req, res) => {
-  Nutri.findAll().then(nutri => {
+  Nutri.findAll(req.user.id)
+  .then(nutri => {
     res.render('nutriList/nutri-index', {
       currentPage: 'index',
-      message: 'ok',
       data: nutri,
     });
   }).catch(err => {
@@ -31,13 +31,13 @@ nutriController.show = (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-};
+}
 //create new Nutri by adding via provided parameters
 nutriController.create = (req, res) => {
   Nutri.create({
-    title: req.body.title,
-    category: req.body.category,
-    details: req.body.details,
+    food: req.body.food,
+    brand: req.body.brand,
+    calories: req.body.calories,
   }).then(() => {
     res.redirect('/nutri');
   }).catch(err => {
@@ -61,7 +61,7 @@ nutriController.update= (req, res) => {
 //edit Nutri
 nutriController.edit = (req, res) => {
   Nutri.findById(req.params.id)
-    .then((nutri) => {
+    .then(nutri => {
       res.render('nutriList/nutri-edit', {
         currentPage: 'edit',
         data: nutri,

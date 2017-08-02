@@ -49,4 +49,5 @@ app.use('/user', userRoutes);
 app.use('*', (req, res) => {
   res.status(400).json({
     message: 'Not found!',
-  });
+  })
+});
