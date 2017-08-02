@@ -6,7 +6,7 @@ const authHelpers = require('../services/auth/auth-helpers');
 nutriRoutes.get('/', authHelpers.loginRequired, nutriController.index);
 nutriRoutes.post('/', authHelpers.loginRequired, nutriController.create);
 
-nutriRoutes.get('/add', (req, res) => {
+nutriRoutes.get('/add',  authHelpers.loginRequired, (req, res) => {
   res.render('nutriList/nutri-add', {
     currentPage: 'add',
   });
