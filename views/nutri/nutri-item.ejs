@@ -1,0 +1,20 @@
+<% include ../partials/boilerplate2 %>
+<% include ../partials/header %>
+
+<div class="list">
+<ul method='POST' action='/nutri/<%= data.id %>?_method=PUT'>
+   <li>
+   <h3><%= data.food %><h3><div class="line"></div>
+   </li>
+   <li>
+   <h3> <%= data.calories %><h3>
+   </li>
+   <li>
+   <h3><%= data.fat %><h3>
+   </li>
+</ul>
+<form method='POST' action='/nutri/<%= data.id%>/edit'></a>
+<a href='/nutri/<%= data.id%>/edit'>Edit!</a>
+</div>
+
+<% include ../partials/end %>
