@@ -33,7 +33,7 @@ Nutri.update = (nutri, id) => {
     calories = $3,
     fiber = $4
     carbs = $5
-    fat =$6
+    fat = $6
     WHERE id = $7
     RETURNING *
   `, [nutri.food, nutri.brand, nutri.calories, nutri.fiber, nutri.carbs, nutri.fat, nutri.user_id, id]);
@@ -46,12 +46,12 @@ Nutri.destroy = (id) => {
   `, [id])
 }
 
-Nutri.complete = (id) => {
-  return db.oneOrNone(`
-  UPDATE nutri SET
-  completed = true
-  WHERE id = $1
-  `, [id]);
-}
+// Nutri.complete = (id) => {
+//   return db.oneOrNone(`
+//   UPDATE nutri SET
+//   completed = true
+//   WHERE id = $1
+//   `, [id]);
+// }
 
 module.exports = Nutri;

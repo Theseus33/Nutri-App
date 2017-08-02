@@ -1,86 +1,93 @@
-//imports Nutri path
 const Nutri = require('../models/nutri-model');
-//Nutri controller as empty object
-const nutriController={};
-//catch will come into effect if then condition is not met and
-//the proper error will be listed in console for the following requests
 
-//render list of all Nutris from json data
+const nutriController = {};
+
 nutriController.index = (req, res) => {
   Nutri.findAll(req.user.id)
-  .then(nutri => {
-    res.render('nutriList/nutri-index', {
-      currentPage: 'index',
-      data: nutri,
-    });
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  })
-};
-//render individual Nutris by requested id through json data
-nutriController.show = (req, res) => {
-  Nutri.findById(req.params.id)
     .then(nutri => {
-      res.render('nutriList/nutri-item', {
-        currentPage: 'show',
-        message: 'ok',
+      res.render('nutri/nutri-index', {
         data: nutri,
       });
     }).catch(err => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(500).json({ err });
+    });
+};
+
+nutriController.show = (req, res) => {
+  Nutri.findById(req.params.id)
+    .then(nutri => {
+      res.render('nutri/nutri-item', {
+        nutri: nutri,
+      })
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({ err });
     });
 }
-//create new Nutri by adding via provided parameters
+
 nutriController.create = (req, res) => {
   Nutri.create({
+    title: req.body.title,
     food: req.body.food,
     brand: req.body.brand,
-    calories: req.body.calories,
-  }).then(() => {
+    user_id: req.user.id,
+  }).then(nutri => {
+    console.log(nutri);
     res.redirect('/nutri');
   }).catch(err => {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ err });
   });
 };
-//change existing Nutri data by Setting to the database
-nutriController.update= (req, res) => {
-  Nutri.update({
-    title: req.body.title,
-    category: req.body.category,
-    details: req.body.details,
-  }, req.params.id).then(nutri => {
-    res.redirect(`/nutri/${req.params.id}`);
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-};
-//edit Nutri
+
 nutriController.edit = (req, res) => {
   Nutri.findById(req.params.id)
     .then(nutri => {
-      res.render('nutriList/nutri-edit', {
-        currentPage: 'edit',
-        data: nutri,
-        user: req.user,
-    });
-      }).catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+      res.render('nutri/nutri-edit', {
+        nutri: nutri,
+      })
+    }).catch(err => {
+    console.log(err);
+    res.status(500).json({ err });
+  });
 }
-//delete Nutri from database
+
+nutriController.update = (req, res) => {
+  Nutri.update({
+    title: req.body.title,
+    food: req.body.food,
+    brand: req.body.brand,
+    completed: req.body.completed,
+    user_id: req.user.id,
+  }, req.params.id).then(nutri => {
+    res.redirect('/nutri');
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json({ err });
+  });
+}
+
 nutriController.delete = (req, res) => {
   Nutri.destroy(req.params.id)
     .then(() => {
       res.redirect('/nutri');
     }).catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    console.log(err);
+    res.status(500).json({ err });
+  });
+}
+
+nutriController.complete = (req, res) => {
+  Nutri.complete(req.params.id)
+    .then(nutri => {
+      res.json({
+        message: 'nutri completed successfully',
+      })
+    }).catch(err => {
+    console.log(err);
+    res.status(500).json({ err });
+  });
 }
 
 module.exports = nutriController;
