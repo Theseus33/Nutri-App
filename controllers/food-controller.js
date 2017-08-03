@@ -2,8 +2,8 @@ const foodController = {};
 
 foodController.index = (req, res) =>  {
   res.render('food/food-index', {
-    weather: res.locals.food,
+    food: res.locals.food,
     });
 }
 
-module.exports foodController;
+module.exports = foodController;
