@@ -28,10 +28,8 @@ nutriController.show = (req, res) => {
 
 nutriController.create = (req, res) => {
   Nutri.create({
-    title: req.body.title,
     food: req.body.food,
     brand: req.body.brand,
-    user_id: req.user.id,
  }).then(() => {
     res.redirect('/nutri');
   }).catch(err => {
@@ -42,19 +40,19 @@ nutriController.create = (req, res) => {
 
 nutriController.edit = (req, res) => {
   Nutri.findById(req.params.id)
-    .then(nutris => {
+    .then((nutris) => {
       res.render('nutri/nutri-edit', {
-        nutris: nutris,
-      })
+        data: nutris,
+        user: req.user,
+      });
     }).catch(err => {
     console.log(err);
     res.status(500).json(err);
   });
-}
+};
 
 nutriController.update = (req, res) => {
   Nutri.update({
-    title: req.body.title,
     food: req.body.food,
     brand: req.body.brand,
     completed: req.body.completed,
