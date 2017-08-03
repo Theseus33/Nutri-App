@@ -1,8 +1,9 @@
 const foodController = {};
 
 foodController.index = (req, res) =>  {
+  console.log(res.locals.food);
   res.render('food/food-index', {
-    food: res.locals.food,
+    data: res.locals.food,
     });
 }
 
