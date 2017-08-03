@@ -40,6 +40,8 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+const foodRoutes = require('./routes/food-routes');
+app.use('/food', foodRoutes);
 const nutriRoutes = require('./routes/nutri-routes');
 app.use('/nutri', nutriRoutes);
 const authRoutes = require('./routes/auth-routes');
