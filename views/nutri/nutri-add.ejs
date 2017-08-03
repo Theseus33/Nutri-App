@@ -1,12 +1,10 @@
-<% include ../partials/boilerplate2 %>
+<% include ../partials/boilerplate %>
 
-<div class="addhead"><h1>ADD A NEW FOOD<h3></div>
-<div class='add'>
-<form method='POST' action='/nutri'>
-  <input required name='title' type='text' placeholder='title' />
-  <input required name='category' type='text' placeholder='category' />
-  <input required name='details' type='text' placeholder='details' class='details' />
-  <input type='submit' value='Submit' />
+<div class="addFood"><h1>ADD A NEW FOOD</h1></div>
+  <form method='POST' action='/nutri'>
+  <input required name='food' type='text' placeholder='food' />
+  <input required name='brand' type='text' placeholder='brand' />
+    <input type='submit' value='Submit' />
 </form>
 </div>
 

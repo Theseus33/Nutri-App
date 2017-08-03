@@ -1,8 +1,10 @@
-<% include ../partials/boilerplate2 %>
+
+
+<% include ../partials/boilerplate %>
 
 <div class='hero'>
   <h1>Your food!</h1>
-<a class='addTo' href='/nutri/index'>
+<a class='addTo' href='/nutri/nutri-add'>
 <div class="addToList">
 Add To List!
 </div>
@@ -12,10 +14,10 @@ Add To List!
   <div class='nutri-container'>
     <% for (let nutri of data) { %>
       <div class='nutri'>
-        <h2><%= nutri.food %><input class="check" type="checkbox" %></h2>
+        <h2><%= nutri.food %></h2>
 
         <div class="line"></div>
-        <h3>Category: <%= nutri.brand %></h3>
+        <h3>Brand: <%= nutri.brand %></h3>
         <div class ='links'>
           <a class='link' href='/nutri/<%= nutri.id%>'>Details</a>
           <form method='POST' action='/nutri/<%= nutri.id%>?_method=DELETE'></a>
@@ -25,5 +27,6 @@ Add To List!
     </div>
   <% } %>
 </div>
-<% include ../partials/footer %>
+
+
 <% include ../partials/end %>

@@ -1,19 +1,14 @@
-<% include ../partials/boilerplate2 %>
-
-<div class="list">
-<ul method='POST' action='/nutri/<%= data.id %>?_method=PUT'>
-   <li>
-   <h3><%= data.food %><h3><div class="line"></div>
-   </li>
-   <li>
-   <h3> <%= data.calories %><h3>
-   </li>
-   <li>
-   <h3><%= data.fat %><h3>
-   </li>
-</ul>
-<form method='POST' action='/nutri/<%= data.id%>/edit'></a>
-<a href='/nutri/<%= data.id%>/edit'>Edit!</a>
-</div>
-
+<% include ../partials/boilerplate %>
+<% for (let nutri of data) { %>
+<h3>food: <%= nutri.food  %></h3>
+<h3>brand: <%= nutri.brand  %></h3>
+<h3>calories: <%= nutri.calories  %></h3>
+<h3>fiber: <%= nutri.fiber  %></h3>
+<h3>carbs: <%= nutri.carbs  %></h3>
+<h3>fat: <%= nutri.fat %></h3>
+  <a href='/nutri/<%= nutri.id%>/edit'>Edit it!</a>
+  <form method='POST' action='/nutri/<%= nutri.id %>?_method=DELETE'>
+  <input type='submit' value='DELETE IT' />
+  </form>
+  <% }%>
 <% include ../partials/end %>

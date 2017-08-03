@@ -27,8 +27,9 @@ app.use(passport.session());
 
 app.use(express.static('public'));
 
-app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -40,7 +41,7 @@ app.get('/', (req, res) => {
 });
 
 const nutriRoutes = require('./routes/nutri-routes');
-app.use('/nutriList', nutriRoutes);
+app.use('/nutri', nutriRoutes);
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');

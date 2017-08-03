@@ -1,30 +1,30 @@
-const Nutri = require('../models/nutri-model');
+const Nutri = require('../models/nutri');
 
 const nutriController = {};
 
 nutriController.index = (req, res) => {
-  Nutri.findAll(req.user.id)
-    .then(nutri => {
-      res.render('nutri/nutri-index', {
-        data: nutri,
+  Nutri.findAll().then(nutris => {
+    res.render('nutri/nutri-index', {
+      data: nutris,
       });
     }).catch(err => {
       console.log(err);
-      res.status(500).json({ err });
+      res.status(500).json(err);
     });
 };
 
 nutriController.show = (req, res) => {
   Nutri.findById(req.params.id)
-    .then(nutri => {
+  .then(nutris => {
+      console.log(nutris, '/nutri')
       res.render('nutri/nutri-item', {
-        nutri: nutri,
-      })
+        data: nutris,
+      });
     }).catch(err => {
       console.log(err);
-      res.status(500).json({ err });
+      res.status(500).json(err);
     });
-}
+};
 
 nutriController.create = (req, res) => {
   Nutri.create({
@@ -32,24 +32,23 @@ nutriController.create = (req, res) => {
     food: req.body.food,
     brand: req.body.brand,
     user_id: req.user.id,
-  }).then(nutri => {
-    console.log(nutri);
+ }).then(() => {
     res.redirect('/nutri');
   }).catch(err => {
     console.log(err);
-    res.status(500).json({ err });
+    res.status(500).json(err);
   });
 };
 
 nutriController.edit = (req, res) => {
   Nutri.findById(req.params.id)
-    .then(nutri => {
+    .then(nutris => {
       res.render('nutri/nutri-edit', {
-        nutri: nutri,
+        nutris: nutris,
       })
     }).catch(err => {
     console.log(err);
-    res.status(500).json({ err });
+    res.status(500).json(err);
   });
 }
 
@@ -60,11 +59,11 @@ nutriController.update = (req, res) => {
     brand: req.body.brand,
     completed: req.body.completed,
     user_id: req.user.id,
-  }, req.params.id).then(nutri => {
+  }, req.params.id).then(nutris => {
     res.redirect('/nutri');
   }).catch(err => {
     console.log(err);
-    res.status(500).json({ err });
+    res.status(500).json(err);
   });
 }
 
@@ -74,19 +73,19 @@ nutriController.delete = (req, res) => {
       res.redirect('/nutri');
     }).catch(err => {
     console.log(err);
-    res.status(500).json({ err });
+    res.status(500).json(err);
   });
 }
 
 nutriController.complete = (req, res) => {
   Nutri.complete(req.params.id)
-    .then(nutri => {
+    .then(nutris => {
       res.json({
         message: 'nutri completed successfully',
       })
     }).catch(err => {
     console.log(err);
-    res.status(500).json({ err });
+    res.status(500).json(err);
   });
 }
 

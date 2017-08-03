@@ -1,12 +1,11 @@
-<% include ../partials/boilerplate2 %>
+<% include ../partials/boilerplate %>
 
-<div class="editpage">
-<form method='POST' action='/nutri/<%= data.id%>?_method=PUT'>
-  <input name='title' type='text' value='<%= data.title %>' />
-    <input name='category' type='text' value='<%= data.category %>' />
-      <input name='details' type='text'  value='<%= data.details %>' />
-        <input type='submit' value='Edit it!' />
-      </form>
+<div class="addFood"><h1>ADD A NEW FOOD</h1></div>
+  <form method='POST' action='/nutri'>
+  <input required name='title' type='text' placeholder='title' />
+  <input required name='category' type='text' placeholder='category' />
+  <input required name='details' type='text' placeholder='details' class='details' />
+    <input type='submit' value='Submit' />
+</form>
 </div>
-
 <% include ../partials/end %>
