@@ -4,6 +4,9 @@
 
 <div class='hero'>
   <h1>Your food!</h1>
+  <form method='POST' action='/nutri/?_method=DELETE'>
+    <input type='submit' value='SEARCH FOR FOOD!' />
+  </form>
 <a class='searchFood' href='/food/'>Search for food!<a>
 </div>
 <!--loops through database nutri and appends them to page--!>
@@ -16,9 +19,9 @@
         <h3>Brand: <%= nutri.brand %></h3>
         <div class ='links'>
           <a class='link' href='/nutri/<%= nutri.id%>'>Details</a>
-          <form method='POST' action='/nutri/<%= nutri.id%>?_method=DELETE'></a>
-          <input type='submit' value='Delete it' />
-        </form>
+          <form method='POST' action='/nutri/<%= nutri.id%>?_method=DELETE'>
+            <input type='submit' value='Delete it' />
+          </form>
       </div>
     </div>
   <% } %>
