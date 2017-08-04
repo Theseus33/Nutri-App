@@ -1,13 +1,13 @@
 <% include ../partials/boilerplate %>
 
 <div class="editpage">
-<form method='POST' action='/nutri/<%= nutri.id %>?_method=PUT'>
-  <input name='food' type='text' value='<%= nutri.food %>' />
-  <input name='brand' type='text' value='<%= nutri.brand %>' />
-  <input name='calories' type='text'  value='<%= nutri.calories %>' />
-  <input name='fiber' type='text' value='<%= nutri.fiber %>' />
-  <input name='carbs' type='text' value='<%= nutri.carbs %>' />
-  <input name='fat' type='text'  value='<%= nutri.fat %>' />
+<form method='POST' action='/nutri/<%= data.id %>?_method=PUT'>
+  <input name='food' type='text' value='<%= data.food %>' placeholder='food' />
+  <input name='brand' type='text' value='<%= data.brand %>' placeholder='brand' />
+  <input name='calories' type='text'  value='<%= data.calories %>' placeholder='calories' />
+  <input name='fiber' type='text' value='<%= data.fiber %>' placeholder='fiber' />
+  <input name='carbs' type='text' value='<%= data.carbs %>' placeholder='carbs' />
+  <input name='fat' type='text'  value='<%= data.fat %>' placeholder='fat' />
 <input type='submit' value='Edit it!' />
       </form>
 </div>
