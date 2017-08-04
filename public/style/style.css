@@ -1,0 +1,46 @@
+
+
+html {
+  color: red;
+}
+
+* { margin: 0; padding: 0 }
+
+.header {
+  overflow: hidden;
+  height: 100vh;
+  background: url('background.jpg') 50%/ cover
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-family: arial;
+  font-size: 83px;
+  margin: 190px 0px 0px 0px;
+  text-decoration: none;
+  color:red;
+}
+span {
+  background:  url('background.jpg') 50%/ cover;
+  -webkit-background-clip: text;
+  display: block;
+  background-position: center -290px;
+  color:rgba(255, 255, 255, 0.3);
+}
+
+.body2 {
+  background: url('back3.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: red;
+}

@@ -1,4 +1,5 @@
-<% include ../partials/boilerplate %>
+<% include ./partials/boilerplate2 %>
+
 <% for (let nutri of data) { %>
 <h3>food: <%= nutri.food  %></h3>
 <h3>brand: <%= nutri.brand  %></h3>
@@ -11,4 +12,5 @@
   <input type='submit' value='DELETE IT' />
   </form>
   <% }%>
+
 <% include ../partials/end %>
