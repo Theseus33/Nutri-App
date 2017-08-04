@@ -1,16 +1,16 @@
 <% include ../partials/boilerplate %>
 
-<h2>brand: <%= data.hits[0].fields.brand_name %></h2>
+<h2>brand: <%= data[0].food %></h2>
 
-<h2>food: <%= data.hits[0].fields.item_name %></h2>
+<h2>food: <%= data[0].brand %></h2>
 
-<h2>calories: <%= data.hits[0].fields.nf_calories %></h2>
+<h2>calories: <%= data[0].calories %></h2>
 
-<h2>total fat: <%= data.hits[0].fields.nf_total_fat %></h2>
+<h2>total fat: <%= data[0].fat %></h2>
 
-<h2>carbs: <%= data.hits[0].fields.nf_total_carbohydrate %></h2>
+<h2>carbs: <%= data[0].carbs %></h2>
 
-<h2>Cholesterol: <%= data.hits[0].fields.nf_cholesterol %></h2>
+<h2>Cholesterol: <%= data[0].fiber %></h2>
 
 <% include ../partials/end %>
 
