@@ -75,16 +75,5 @@ nutriController.delete = (req, res) => {
   });
 }
 
-nutriController.complete = (req, res) => {
-  Nutri.complete(req.params.id)
-    .then(nutris => {
-      res.json({
-        message: 'nutri completed successfully',
-      })
-    }).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-}
 
 module.exports = nutriController;

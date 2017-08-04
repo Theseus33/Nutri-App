@@ -6,7 +6,7 @@ html {
 
 * { margin: 0; padding: 0 }
 
-.header {
+.heading {
   overflow: hidden;
   height: 100vh;
   background: url('background.jpg') 50%/ cover
@@ -43,4 +43,20 @@ span {
   -o-background-size: cover;
   background-size: cover;
   color: red;
+}
+
+.login {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-family: arial;
+  font-size: 34px;
+  margin: 190px 0px 0px 0px;
+  text-decoration: none;
+}
+.log {
+color: rgba(255, 255, 255, .7);
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

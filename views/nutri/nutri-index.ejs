@@ -9,13 +9,14 @@
   <div class='nutri-container'>
     <% for (let nutri of data) { %>
       <div class='nutri'>
-        <h2><%= nutri.food %></h2>
+        <h2><%= data.food %></h2>
 
         <div class="line"></div>
+        <h3>Name: <%= nutri.food %></h3>
         <h3>Brand: <%= nutri.brand %></h3>
         <div class ='links'>
           <a class='link' href='/nutri/<%= nutri.id%>'>Details</a>
-          <form method='POST' action='/nutri/<%= nutri.id%>?_method=DELETE'>
+          <form method='POST' action='/nutri/<%= data.id%>?_method=DELETE'>
             <input type='submit' value='Delete it' />
           </form>
       </div>

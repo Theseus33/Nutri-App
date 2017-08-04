@@ -1,12 +1,12 @@
-<% include ./partials/boilerplate2 %>
+<% include ../partials/boilerplate2 %>
 
 <% for (let nutri of data) { %>
-<h3>food: <%= nutri.food  %></h3>
-<h3>brand: <%= nutri.brand  %></h3>
-<h3>calories: <%= nutri.calories  %></h3>
-<h3>fiber: <%= nutri.fiber  %></h3>
-<h3>carbs: <%= nutri.carbs  %></h3>
-<h3>fat: <%= nutri.fat %></h3>
+<h3>food: <%= data[0].food  %></h3>
+<h3>brand: <%= data[0].brand  %></h3>
+<h3>calories: <%= data[0].calories  %></h3>
+<h3>fiber: <%= data[0].fiber  %></h3>
+<h3>carbs: <%= data[0].carbs  %></h3>
+<h3>fat: <%= data[0].fat %></h3>
   <a href='/nutri/<%= nutri.id%>/edit'>Edit it!</a>
   <form method='POST' action='/nutri/<%= nutri.id %>?_method=DELETE'>
   <input type='submit' value='DELETE IT' />
