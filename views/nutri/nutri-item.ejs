@@ -7,7 +7,7 @@
 <h3>fiber: <%= data[0].fiber  %></h3>
 <h3>carbs: <%= data[0].carbs  %></h3>
 <h3>fat: <%= data[0].fat %></h3>
-  <a href='/nutri/<%= nutri.id%>/edit'>Edit it!</a>
+  <a class="edit" href='/nutri/<%= nutri.id%>/edit'>Edit it!</a>
   <form method='POST' action='/nutri/<%= nutri.id %>?_method=DELETE'>
   <input type='submit' value='DELETE IT' />
   </form>

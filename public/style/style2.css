@@ -1,21 +1,35 @@
 .body2 {
-  background: url('back3.jpg') no-repeat center center fixed;
+  background: url('back5.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: red;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
+  text-decoration: none;
 }
 
+.edit {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
 
 .searchFood {
 color: white;
 text-decoration: none;
 font-family: 'Abril Fatface', cursive;
-font-size: 15em;
+font-size: 2em;
+border: 1px solid white;
+border-radius: 6px;
+padding-left: 2px;
+padding-right: 2px;
 }
 
 .nutri-container {
-  background-color: rgba(255, 255, 255, .7)
-
+  background-color: rgba(0, 0, 0, .3);
 }
