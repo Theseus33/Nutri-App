@@ -43,7 +43,6 @@ nutriController.edit = (req, res) => {
     .then((nutris) => {
       res.render('nutri/nutri-edit', {
         data: nutris,
-        user: req.user,
       });
     }).catch(err => {
     console.log(err);
@@ -55,10 +54,9 @@ nutriController.update = (req, res) => {
   Nutri.update({
     food: req.body.food,
     brand: req.body.brand,
-    completed: req.body.completed,
     user_id: req.user.id,
   }, req.params.id).then(nutris => {
-    res.redirect('/nutri');
+    res.redirect(`/nutri/${req.params.id}`);
   }).catch(err => {
     console.log(err);
     res.status(500).json(err);

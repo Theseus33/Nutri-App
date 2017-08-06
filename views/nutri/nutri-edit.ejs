@@ -29,7 +29,7 @@
   <% }%>
 
 <div>
-  <form method='POST' action='/nutri/<%= data.id %>?_method=SET'>
+  <form method='POST' action='/nutri/<%= data.id %>?_method=PUT'>
     <input name='food' type='text' value='<%= data.food %>' placeholder='food' required/>
       <div class='clear'></div>
     <input name='brand' type='text' value='<%= data.brand %>' placeholder='brand' required/>
