@@ -1,7 +1,7 @@
 <% include ../partials/boilerplate2 %>
 
 <div class='hero'>
-  <h1> Your food! </h1>
+  <h1> Your Food List! </h1>
 
 <a class='searchFood' href='/food/food-search'> Search for food! <a>
 </div>
@@ -12,13 +12,13 @@
         <h2><%= data.food %></h2>
 
         <div class="line"></div>
-        <h3>Name: <%= nutri.food %></h3>
-        <h3>Brand: <%= nutri.brand %></h3>
+        <h2><%= nutri.food %></h3>
+        <h3><%= nutri.brand %></h3>
         <div class ='links'>
           <a class="edit" class='link' href='/nutri/<%= nutri.id%>'>Details</a>
           <form method='POST' action='/nutri/<%= data.id%>?_method=DELETE'>
             <input class="delete" type='submit' value='Delete' />
-            <div class="h_line"></div>
+            <hr>
           </form>
       </div>
     </div>

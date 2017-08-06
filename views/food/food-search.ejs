@@ -1,8 +1,11 @@
 <% include ../partials/boilerplate2 %>
 
-<form method='POST' action='/food'>
-  <input required name='food' type='text' placeholder='food' />
-  <input type='submit' value='Submit' />
-</form>
+<div class='logger'>
 
+      <form method='POST' action='/food'>
+        <input required name='food' type='text' placeholder='search for food' />
+          <div class='clear'></div>
+            <input class="delete" type='submit' value='Submit' />
+      </form>
+</div>
 <% include ../partials/end %>
