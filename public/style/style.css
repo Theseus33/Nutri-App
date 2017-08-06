@@ -4,7 +4,10 @@ html {
   color: red;
 }
 
-* { margin: 0; padding: 0 }
+* {
+  margin: 0;
+  padding: 0
+}
 
 .heading {
   overflow: hidden;
@@ -14,6 +17,14 @@ html {
 
 a {
   text-decoration: none;
+}
+.tag {
+  font-family: 'Shadows Into Light', cursive;
+  color: rgba(255, 255, 255, .7);
+  font-size: 18px;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 h2 {
@@ -28,6 +39,21 @@ h2 {
   text-decoration: none;
   color:red;
 }
+
+.clear {
+  clear: both;
+}
+
+
+input[type="submit"]{
+  padding: 15px 25px;
+  background: #150;
+  color: #fff;
+  border: none;
+  margin-bottom: 20px;
+  cursor:pointer;
+}
+
 span {
   background:  url('background.jpg') 50%/ cover;
   -webkit-background-clip: text;
@@ -56,6 +82,7 @@ span {
   margin: 190px 0px 0px 0px;
   text-decoration: none;
 }
+
 .log {
 color: rgba(255, 255, 255, .7);
 text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;

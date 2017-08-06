@@ -1,12 +1,17 @@
-<% include ../partials/boilerplate %>
-
+<% include ../partials/boilerplate3 %>
+<div class='logger'>
 <form method='POST' action='/auth/register'>
   <input name='username' type='text' placeholder='User Name' required />
+  <div class="clear"></div>
   <input name='firstname' type='text' placeholder='First Name' required />
+  <div class="clear"></div>
   <input name='lastname' type='text' placeholder='Last Name' required />
+  <div class="clear"></div>
   <input name='email' type='email' placeholder='E-Mail' required />
+  <div class="clear"></div>
   <input name='password' type='password' placeholder='Password' required />
+  <div class="clear"></div>
   <input type='submit' value='Register!' />
 </form>
-
+</div>
 <% include ../partials/end %>

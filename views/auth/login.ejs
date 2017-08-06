@@ -1,9 +1,13 @@
-<% include ../partials/boilerplate %>
+<% include ../partials/boilerplate3 %>
 
-<form method='POST' action='/auth/login'>
+<div class="logger">
+<form id='login-form' method='POST' action='/auth/login'>
   <input name='username' type='text' placeholder='username' required />
+  <div class="clear"></div>
   <input name='password' type='password' placeholder='password' required />
+  <div class="clear"></div>
   <input type='submit' value='Login' />
 </form>
+</div>
 
 <% include ../partials/end %>
