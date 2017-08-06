@@ -33,3 +33,42 @@ padding-right: 2px;
 .nutri-container {
   background-color: rgba(0, 0, 0, .3);
 }
+
+.clear {
+  clear: both;
+}
+
+table {
+  width: 100%;
+  margin: 20px auto;
+  table-layout: auto;
+  background-color: rgba(240, 234, 214, .9);
+}
+
+.fixed {
+  table-layout: fixed;
+}
+
+table, td, th {
+  border-collapse: collapse;
+}
+
+th, td {  padding: 10px;
+  border: solid 1px;
+  text-align: center;
+}
+
+.delete {
+  margin-top: 10px;
+  background:none!important;
+  color:inherit;
+  padding:0!important;
+  font: inherit;
+  border:1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.hline { width:100%; height:1px; background: #fff }
