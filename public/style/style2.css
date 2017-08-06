@@ -65,6 +65,10 @@ padding-right: 2px;
   clear: both;
 }
 
+.sell{
+  font-family: 'Alex Brush', cursive;
+  font-size: 40px;
+}
 table {
   width: 100%;
   margin: 20px auto;
@@ -94,8 +98,8 @@ th, td {  padding: 10px;
   border:1px solid white;
   border-radius: 6px;
   cursor: pointer;
-  padding-right: 2px;
-  padding-left: 2px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 /* Glyph, by Harry Roberts */
