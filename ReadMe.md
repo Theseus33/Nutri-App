@@ -1,5 +1,5 @@
 #Nutrition App
-![List of Foods](stat.png)
+![List of Foods](stats.png)
 
 ![Nutrition info](list.png)
 
