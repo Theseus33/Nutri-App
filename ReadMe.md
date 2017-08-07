@@ -1,7 +1,7 @@
 #Nutrition App
-![List of Foods](stat.jpg)
+![List of Foods](stat.png)
 
-![Nutrition info](list.jpg)
+![Nutrition info](list.png)
 
 
 ## What is the 'Nutrition App'?
